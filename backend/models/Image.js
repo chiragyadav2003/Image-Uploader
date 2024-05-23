@@ -13,7 +13,7 @@ const imageSchema = new mongoose.Schema(
         folder: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Folder',
-            required: true
+            default: null
         },
         user: {
             type: mongoose.Schema.Types.ObjectId,
