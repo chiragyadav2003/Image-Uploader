@@ -1,10 +1,10 @@
 import jwt from 'jsonwebtoken';
 import User from "../models/User.js";
-import { JWT_SECRET } from '../dotenv.config';
+import { JWT_SECRET } from '../dotenv.config.js';
 
 const protect = async (req, res, next) => {
-    const token = req.header('Authorization').split(' ')[1];
-    console.log("@@auth token", token)
+    // access auth token from cookies
+    const token = req.cookies.token
 
     if (!token) {
         return res.status(401).json({ message: "Not authorized, no auth token" });
@@ -21,4 +21,4 @@ const protect = async (req, res, next) => {
     }
 };
 
-export default password;
+export default protect;
