@@ -4,10 +4,10 @@ import Image from "../models/Image.js";
 import protect from "../middleware/authMiddleware.js";
 import fs from "fs/promises";
 import path from 'path';
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 
@@ -45,8 +45,8 @@ router.post("/", protect, upload.single('image'), async (req, res) => {
         await image.save();
 
         // Delete the uploaded image file from the uploads folder after saving to database
-        const imagePath = path.join(__dirname, `../${req.file.path}`);
-        await fs.unlink(imagePath);
+        // const imagePath = path.join(__dirname, `../${req.file.path}`);
+        // await fs.unlink(imagePath);
 
         res.status(201).json(image);
     } catch (error) {

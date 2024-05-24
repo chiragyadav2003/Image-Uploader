@@ -2,6 +2,8 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import User from "../models/User.js";
 import { JWT_SECRET } from '../dotenv.config.js';
+import protect from "../middleware/authMiddleware.js"
+
 
 const router = express.Router();
 
@@ -69,6 +71,15 @@ router.post('/logout', (req, res) => {
     res.status(200).json({
         message: 'User logged out'
     });
+});
+
+
+router.get('/authStatus', protect, (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: 'Authenticated',
+        user: req.user
+    })
 });
 
 export default router;
