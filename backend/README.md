@@ -55,7 +55,7 @@ To run the backend project locally:
 1. CLone the repository
 
    ```
-   git clone <backend-repo-url>
+   git clone https://github.com/chiragyadav2003/Image-Uploader/tree/master/backend
    cd backend
    ```
 
@@ -65,9 +65,7 @@ To run the backend project locally:
    npm install
    ```
 
-3. Set up environment variables: \
-   Create a .env file in the root of the backend directory and add necessary environment variables y taking reference from .env.sample
-
+3. Set up environment variables: Create a .env file in the root of the backend directory and add necessary environment variables y taking reference from .env.sample
 4. Start the server:
 
    ```
